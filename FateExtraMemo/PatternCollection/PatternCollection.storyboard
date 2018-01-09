@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gqE-3d-Oe7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pattern Collection View Controller-->
+        <scene sceneID="Ic0-GM-OtK">
+            <objects>
+                <collectionViewController id="gqE-3d-Oe7" customClass="PatternCollectionViewController" customModule="FateExtraMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ISg-ct-fld">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y2S-gb-Mlz">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="rkF-Qc-7kO" customClass="PatternCollectionViewCell" customModule="FateExtraMemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdE-d4-tz1">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                            <state key="selected" backgroundImage="SelectedBackground"/>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pdE-d4-tz1" secondAttribute="bottom" id="01i-3b-8k9"/>
+                                    <constraint firstItem="pdE-d4-tz1" firstAttribute="top" secondItem="rkF-Qc-7kO" secondAttribute="top" id="6XG-H3-L1M"/>
+                                    <constraint firstItem="pdE-d4-tz1" firstAttribute="leading" secondItem="rkF-Qc-7kO" secondAttribute="leading" id="gkv-HW-sBt"/>
+                                    <constraint firstAttribute="trailing" secondItem="pdE-d4-tz1" secondAttribute="trailing" id="yjU-WC-zOZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="view" destination="pdE-d4-tz1" id="wDb-PC-W1V"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gqE-3d-Oe7" id="ntT-f0-gTy"/>
+                            <outlet property="delegate" destination="gqE-3d-Oe7" id="BcL-OU-016"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BuW-48-mTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5087" y="-101"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SelectedBackground" width="1" height="1"/>
+    </resources>
+</document>
