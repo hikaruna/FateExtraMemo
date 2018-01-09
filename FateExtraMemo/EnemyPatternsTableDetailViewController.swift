@@ -10,19 +10,14 @@ import UIKit
 
 class EnemyPatternsTableDetailViewController: UIViewController {
 
-    var pattern = Pattern() {
-        didSet {
-            if isViewLoaded {
-                updatePatternUI()
-                collectionViewController.pattern = pattern
-            }
-        }
+    var pattern: Pattern {
+        get { return collectionViewController.pattern }
+        set { collectionViewController?.pattern = newValue }
     }
 
-    var index: Int? = 0 {
-        didSet {
-            collectionViewController?.index = index
-        }
+    var index: Int? {
+        get { return collectionViewController.index }
+        set { collectionViewController.index = newValue }
     }
 
     @IBOutlet weak var patternLabel: UILabel!
@@ -36,12 +31,7 @@ class EnemyPatternsTableDetailViewController: UIViewController {
     }
 
     func next() {
-        guard let index = self.index else { return }
-        guard (index + 1) < pattern.count else {
-            self.index = nil
-            return
-        }
-        self.index = index + 1
+        collectionViewController.next()
     }
 
     private func updateUI() {
@@ -68,8 +58,9 @@ class EnemyPatternsTableDetailViewController: UIViewController {
         func prepare(for segue: UIStoryboardSegue, context: EnemyPatternsTableDetailViewController) {
             switch self {
             case .embedCollection:
+                print("embedCollection")
                 context.collectionViewController = segue.destination as! PatternCollectionViewController
-                context.collectionViewController.pattern = context.pattern
+                context.collectionViewController.pattern = Pattern()
                 context.collectionViewController.index = 0
             case .embedController:
                 let controller = segue.destination as! ControllerViewController
@@ -93,7 +84,6 @@ extension EnemyPatternsTableDetailViewController: ControllerViewControllerDelega
         pattern[index] = .guardd
         next()
         updateUI()
-        collectionViewController.pattern = pattern
     }
 
     func didTouchBreakButton() {

@@ -47,6 +47,7 @@ class EnemyPatternsTableViewController: UITableViewController {
                 let detailViewController = segue.destination as! EnemyPatternsTableDetailViewController
                 detailViewController.pattern = context.patternForSelectedRow!
             case .addItem:
+                print("addItem")
                 let detailViewController = segue.destination as! EnemyPatternsTableDetailViewController
                 detailViewController.pattern = Pattern()
             }

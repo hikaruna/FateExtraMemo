@@ -130,7 +130,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zvv-2V-YE4" kind="show" id="YNe-Oh-945"/>
+                                    <segue destination="zvv-2V-YE4" kind="show" identifier="ShowDetail" id="YNe-Oh-945"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -15,10 +15,11 @@ class PatternCollectionViewCell: UICollectionViewCell {
     }
 
     override var isSelected: Bool {
-        get { return view.isSelected }
-        set { view.isSelected = newValue}
+        didSet {
+            backgroundColor = isSelected ? .blue : .clear
+        }
     }
-
+    
     @IBOutlet weak var view: UIButton!
 
     private func updateUI() {

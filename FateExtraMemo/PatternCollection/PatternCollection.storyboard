@@ -31,15 +31,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdE-d4-tz1">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdE-d4-tz1">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="25"/>
                                             <state key="normal" title="Button"/>
                                             <state key="selected" backgroundImage="SelectedBackground"/>
                                         </button>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" red="0.33006954170000002" green="1" blue="0.5716265895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pdE-d4-tz1" secondAttribute="bottom" id="01i-3b-8k9"/>
+                                    <constraint firstAttribute="bottom" secondItem="pdE-d4-tz1" secondAttribute="bottom" constant="25" id="01i-3b-8k9"/>
                                     <constraint firstItem="pdE-d4-tz1" firstAttribute="top" secondItem="rkF-Qc-7kO" secondAttribute="top" id="6XG-H3-L1M"/>
                                     <constraint firstItem="pdE-d4-tz1" firstAttribute="leading" secondItem="rkF-Qc-7kO" secondAttribute="leading" id="gkv-HW-sBt"/>
                                     <constraint firstAttribute="trailing" secondItem="pdE-d4-tz1" secondAttribute="trailing" id="yjU-WC-zOZ"/>
